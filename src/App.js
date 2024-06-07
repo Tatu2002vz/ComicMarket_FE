@@ -47,7 +47,6 @@ function App() {
             );
           })
           }
-          <Route path="*" element={<Navigate to={path.HOME}/>}/>
         </Routes>
         <ToastContainer />
       </div>
