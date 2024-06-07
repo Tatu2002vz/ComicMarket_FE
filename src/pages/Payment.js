@@ -51,8 +51,10 @@ const Payment = () => {
     const rs = await getPaymentReturn(paramsObject);
     if (rs.success) {
       if (rs.mes === "00") {
-        navigate("/payment/success");
+        navigate(0);
         // toast.success("Nạp tiền thành công!");
+      } else if (rs.mes === "01") {
+        navigate("/payment/success");
       }
     } else {
       toast.error("Nạp tiền thất bại! Vui lòng thử lại sau!");
@@ -62,7 +64,6 @@ const Payment = () => {
     if (Object.keys(paramsObject).length > 0) {
       getPaymentRs();
     }
-    if(location.pathname === "/payment/success") dispatch(getCurrent())
   }, []);
   return (
     <div className="min-h-fs max-w-main mx-auto">
