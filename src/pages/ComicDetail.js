@@ -20,6 +20,7 @@ import io from "socket.io-client";
 import { useSelector } from "react-redux";
 import { apiFollow, apiGetFollow, apiUnfollow } from "../apis/follow";
 import { toast } from "react-toastify";
+import Loading from "../components/Loading";
 const {
   HiStatusOnline,
   GrUpdate,
@@ -48,6 +49,7 @@ const ComicDetail = () => {
     chapters: null,
     comments: null,
   });
+  const [loading, setLoading] = useState(true);
   const fetchComic = async () => {
     if (slug === "chapter") navigate(`/comic/${id}`);
     let comicID = null;
@@ -81,6 +83,7 @@ const ComicDetail = () => {
       console.log(chaptersApi);
       console.log(getComments);
     }
+    setLoading(false);
   };
 
   const handleFollow = async () => {
@@ -129,7 +132,7 @@ const ComicDetail = () => {
 
   return (
     <div className="bg-mainBg relative pb-6">
-      <div className="h-[350px] overflow-hidden absolute top-0 left-0 w-full z-0">
+      {loading ? <Loading/> : <div><div className="h-[350px] overflow-hidden absolute top-0 left-0 w-full z-0">
         <img
           src={comic?.coverImage}
           alt=""
@@ -286,7 +289,7 @@ const ComicDetail = () => {
           errorReport={comicError}
           isComic={true}
         />
-      )}
+      )}</div>}
     </div>
   );
 };
