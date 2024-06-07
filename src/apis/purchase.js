@@ -18,13 +18,13 @@ export const apiGetAllPurchase = () => axios({
 
 export const createPaymentURL = (amount) => axios({
     method: 'POST',
-    url: `purchase/create_payment_url`,
+    url: `payment/create_payment_url`,
     data: {
         amount: amount,
     }
 })
 export const getPaymentReturn = (payload) => axios({
     method: 'PUT',
-    url: `purchase/vnpay_return`,
+    url: `payment/vnpay_return`,
     data: payload
 })
