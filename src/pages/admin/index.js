@@ -1,0 +1,8 @@
+export {default as DashBoard} from './DashBoard'
+export {default as UserManager} from './UserManager'
+export {default as ComicManager} from './ComicManager'
+export {default as ChapterManager} from './ChapterManager'
+export {default as UpdateUser} from './UpdateUser'
+export {default as UpdateComic} from './UpdateComic'
+export {default as UpdateChapter} from './UpdateChapter'
+export {default as IncomeManager} from './IncomeManager'

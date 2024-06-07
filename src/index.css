@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap");
+@import "react-toastify/dist/ReactToastify.css";
+html {
+  scroll-behavior: smooth;
+}
+body {
+  box-sizing: border-box;
+  font-family: Montserrat, Inter, ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif,
+    BlinkMacSystemFont, "Helvetica Neue", Arial, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 15px;
+}
+
+table,
+tr,
+td,
+th {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  padding: 4px 8px;
+}
+tr:hover {
+  background: rgb(42, 48, 61);
+}
+th {
+  background: #6c74fc;
+}
+a.comic-item + a.comic-item {
+  border-top: 1px solid #ccc;
+}
+.login-popup {
+  background: url(./assets/image_login.png) no-repeat #131a33;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+::-webkit-scrollbar-button {
+  width: 8px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d334f;
+  border: thin solid #33333300;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #33333300;
+  border: thin solid #33333300;
+  border-radius: 10px;
+}
+/* loading animation */
+
+.loader-search {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* loading animation */
+.effect-logo {
+  /* letter-spacing: 0.0015em; */
+  font-size: 3rem;
+  text-shadow: 0 1px #8da1ff, -1px 0 #c0cbff, -1px 2px #8da1ff, -2px 1px #c0cbff,
+    -2px 3px #8da1ff, -3px 2px #c0cbff, -3px 4px #8da1ff, -4px 3px #c0cbff,
+    -4px 5px #8da1ff, -5px 4px #c0cbff, -5px 6px #8da1ff, -6px 5px #c0cbff,
+    -6px 7px #8da1ff, -7px 6px #c0cbff, -7px 8px #8da1ff, -8px 7px #c0cbff;
+  font-family: "Henny Penny", cursive;
+  color: #6c74fc;
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 60px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side, #fff 90%, #0000);
+  background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+  background-size: calc(100% / 3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
+}
+.skeleton {
+  background-color: #e2e5e7;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+  background-size: 40px 100%;
+  background-repeat: no-repeat;
+  background-position: left -40px top 0;
+  animation: shine 1s ease infinite;
+}
+@keyframes shine {
+  to {
+    background-position: right -40px top 0;
+  }
+}
+
