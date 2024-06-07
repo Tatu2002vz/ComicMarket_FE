@@ -62,7 +62,7 @@ const Payment = () => {
     if (Object.keys(paramsObject).length > 0) {
       getPaymentRs();
     }
-    if(location.pathname === "/payment/success") navigate(0);
+    if(location.pathname === "/payment/success") dispatch(getCurrent())
   }, []);
   return (
     <div className="min-h-fs max-w-main mx-auto">
